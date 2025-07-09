@@ -236,12 +236,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Efectos adicionales para mejorar la experiencia
     
-    // Parallax suave para el hero
+    // Parallax suave para el hero (solo en desktop)
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
-        if (hero && scrolled < window.innerHeight) {
+        
+        // Solo aplicar parallax en pantallas grandes (desktop)
+        if (hero && scrolled < window.innerHeight && window.innerWidth > 768) {
             hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        } else if (hero && window.innerWidth <= 768) {
+            // Resetear transform en mobile
+            hero.style.transform = 'translateY(0)';
         }
     });
 

@@ -587,6 +587,12 @@ body {
         height: 300px;
     }
     
+    /* Asegurar que el hero sea visible en mobile */
+    .hero {
+        transform: none !important;
+        position: relative !important;
+    }
+    
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -633,6 +639,12 @@ body {
     .profile-image {
         width: 250px;
         height: 250px;
+    }
+    
+    /* Asegurar que el hero sea visible en mobile pequeño */
+    .hero {
+        transform: none !important;
+        position: relative !important;
     }
     
     .section-header h2 {
